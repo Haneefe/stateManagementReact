@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "./App.css";
+import NameList from "./UserList";
+import UseReducerDemo from "./UseReducerDemo";
 function App() {
+  const [count, setCount] = useState(10);
+  const increaseCount = (e) => {
+    e.preventDefault();
+    setCount(count + 1);
+  };
+  const decreaseCount = (e) => {
+    e.preventDefault();
+    setCount(count - 1);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UseReducerDemo />
+      <div className="App">
+        <button onClick={decreaseCount}>-</button>
+        <p>{count}</p>
+        <button onClick={increaseCount}>+</button>
+      </div>
+      <NameList />
+    </>
   );
 }
 
