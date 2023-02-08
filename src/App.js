@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import NameList from "./UserList";
 import UseReducerDemo from "./UseReducerDemo";
+import UserForm from "./UseReducerDemo";
 function App() {
   const [count, setCount] = useState(10);
   const increaseCount = (e) => {
@@ -14,7 +15,8 @@ function App() {
   };
   return (
     <>
-      <UseReducerDemo />
+      <UserForm />
+      {/* <UseReducerDemo /> */}
       <div className="App">
         <button onClick={decreaseCount}>-</button>
         <p>{count}</p>
